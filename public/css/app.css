@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Khebrat;
+  src: url("../fonts/18 Khebrat Musamim Regular.ttf");
+}
+
 body{
   padding: 80px;
 }
@@ -15,20 +20,28 @@ body{
     font-family: Cairo;
   }
 
-  :root {
-    counter-reset: masonry;
-  }
   
   .main-container{
-    /* width: 90vw; */
-    padding: 50px;
+    width: 100%;
+    padding: 40px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     margin-top: 100px;
   }
 
-  .slide1{
+  .slide{
+    color: whitesmoke;
+    background-color: burlywood;
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  /* .slide1{
     border-radius: 5px;
     width: 600px;
     height: 400px;
@@ -54,9 +67,11 @@ body{
     box-sizing: border-box;
     text-align: right;
     position: relative;
-  }
+  } */
 
   .slide p{
-    margin-top: 250px;
+    margin-top: auto;
+    font-family: Khebrat;
+    text-align: right;
   }
  
