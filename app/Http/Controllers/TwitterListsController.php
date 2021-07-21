@@ -13,7 +13,7 @@ class TwitterListsController extends Controller
     public function index(){
         $tweets = [];
 
-        $statuses = Twitter::getListStatuses(['list_id' => "1416543495322587138", 'include_rts' => false,'count' => "200"]);
+        $statuses = Twitter::getListStatuses(['list_id' => "1165915296277958656", 'include_rts' => false,'count' => "200",  'tweet_mode' => 'extended']);
 
             // foreach($statuses as $status){
 
@@ -22,7 +22,7 @@ class TwitterListsController extends Controller
             //         $contents = Twitter::getUserTimeline(['user_id' => $store->id_str]);
                     
                     foreach($statuses as $tweet){
-                        if(Str::contains($tweet->text, ['عروض', 'تخفيضات', 'توفير', 'عرض', 'تخفيض', 'offer', 'offers', 'discount'])){
+                        if(Str::contains($tweet->full_text, ['عروض', 'تخفيضات', 'توفير', 'عرض', 'تخفيض', 'offer', 'offers', 'discount'])){
                             $tweets[] = $tweet;
                         }
                     }
@@ -40,21 +40,21 @@ class TwitterListsController extends Controller
     public function lists(){
         $tweets = [];
 
-        $stores = Twitter::getListMembers(['list_id' => "1416543495322587138", 'count' => "200"]);
+        $statuses = Twitter::getListStatuses(['list_id' => "1416543495322587138", 'include_rts' => false,'count' => "200",  'tweet_mode' => 'extended']);
 
-            foreach($stores->users as $store){
+            // foreach($statuses as $status){
 
-                if(!$store->protected){
+            //     if(!$store->protected){
 
-                    $contents = Twitter::getUserTimeline(['user_id' => $store->id_str]);
+            //         $contents = Twitter::getUserTimeline(['user_id' => $store->id_str]);
                     
-                    foreach($contents as $tweet){
-                        if(Str::contains($tweet->text, ['عروض', 'تخفيضات', 'توفير', 'عرض', 'تخفيض', 'offer', 'offers', 'discount'])){
+                    foreach($statuses as $tweet){
+                        if(Str::contains($tweet->full_text, ['عروض', 'تخفيضات', 'توفير', 'عرض', 'تخفيض', 'offer', 'offers', 'discount'])){
                             $tweets[] = $tweet;
                         }
                     }
-                }                
-            }
+            //     }                
+            // }
 
         return response()->json($tweets);
   
