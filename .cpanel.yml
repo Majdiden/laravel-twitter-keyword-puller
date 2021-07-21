@@ -1,8 +1,9 @@
 ---
 deployment:
       tasks:
-        - export DEPLOYPATH=/home/wvlxjdhh/sd-offers  
-        - /bin/cp <file_name> $DEPLOYPATH                     
+        - export DEPLOYPATH=/home/wvlxjdhh/public_html/sd-twitter-offers  
+        - /bin/cp public $DEPLOYPATH
+        - /bin/cp sd-offers /home/wvlxjdhh/sd-offers                     
        
                   
         
