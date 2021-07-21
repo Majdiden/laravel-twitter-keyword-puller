@@ -1,8 +1,8 @@
 ---
 deployment:
       tasks:
-        - export DEPLOYPATH=/home/<username>/sd-offers             
-        - /bin cp * $DEPLOYPATH                          
+        - export DEPLOYPATH=/home/<username>/sd-offers  
+        - /bin/cp <file_name> $DEPLOYPATH                     
        
                   
         
