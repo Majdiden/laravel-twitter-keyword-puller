@@ -1,7 +1,7 @@
 ---
 deployment:
       tasks:
-        - export DEPLOYPATH=/home/<username>/sd-offers  
+        - export DEPLOYPATH=/home/<username>/public_html  
         - /bin/cp <file_name> $DEPLOYPATH                 
         - /bin/cp /<sub_folder>/<file_name> $DEPLOYPATH   
         - /bin cp * $DEPLOYPATH                          
